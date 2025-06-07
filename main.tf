@@ -36,19 +36,19 @@ provider "confluent" {
 # Deploy a Flink SQL statement to Confluent Cloud.
 resource "confluent_flink_statement" "my_flink_statement" {
   organization {
-    id = locals.organization_id
+    id = local.organization_id
   }
 
   environment {
-    id = locals.env_id
+    id = local.env_id
   }
 
   compute_pool {
-    id = locals.compute_pool_id
+    id = local.compute_pool_id
   }
 
   principal {
-    id = locals.sa_id
+    id = local.sa_id
   }
 
   statement = <<EOT
@@ -83,8 +83,8 @@ GROUP BY
     EOT
 
   properties = {
-    "sql.current-catalog"  = locals.confluent_env
-    "sql.current-database" = locals.cluster_name
+    "sql.current-catalog"  = local.confluent_env
+    "sql.current-database" = local.cluster_name
   }
 
   rest_endpoint = flink.us-east1.gcp.confluent.cloud
