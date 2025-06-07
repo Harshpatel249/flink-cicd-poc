@@ -82,6 +82,7 @@ GROUP BY
     window_end;
     EOT
 
+
   properties = {
     "sql.current-catalog"  = local.confluent_env
     "sql.current-database" = local.cluster_name
