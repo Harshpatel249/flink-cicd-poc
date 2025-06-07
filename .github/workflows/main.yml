@@ -1,7 +1,7 @@
 on:
  push:
     branches:
-    - main
+    - master
 
 jobs:
  terraform_flink_ccloud_tutorial:
