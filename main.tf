@@ -1,3 +1,20 @@
+terraform {
+  cloud {
+    organization = "mcafee-demo"
+
+    workspaces {
+      name = "mcafee"
+    }
+  }
+
+  required_providers {
+    confluent = {
+      source  = "confluentinc/confluent"
+      version = "2.2.0"
+    }
+  }
+}
+
 locals {
   cloud  = "GCP"
   region = "us-east1"
