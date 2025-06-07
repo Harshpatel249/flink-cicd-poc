@@ -87,7 +87,7 @@ GROUP BY
     "sql.current-database" = local.cluster_name
   }
 
-  rest_endpoint = "flink.us-east1.gcp.confluent.cloud"
+  rest_endpoint = "https://flink.us-east1.gcp.confluent.cloud"
   credentials {
     key    = var.flink_api_key
     secret = var.flink_api_secret
